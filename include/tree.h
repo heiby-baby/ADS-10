@@ -35,7 +35,8 @@ class Tree {
       buildTree(remainingChars, child);
     }
   }
-  void _getPermutations(node* currentNode, std::vector<char> currentPermutation, \
+  void _getPermutations(node* currentNode, \
+    std::vector<char> currentPermutation, \
     std::vector<std::vector<char>> permutations) {
     if (currentNode == nullptr) {
       return;
