@@ -11,8 +11,8 @@ struct node {
 
 class Tree {
  public:
-  Tree(const std::vector<char>& characters) {
-    root = new node('\0');  
+  explicit Tree(const std::vector<char>& characters) {
+    root = new node('\0');
     buildTree(characters, root);
   }
 
@@ -30,11 +30,13 @@ class Tree {
       node* child = new node(c);
       parent->children.push_back(child);
       std::vector<char> remainingChars(characters);
-      remainingChars.erase(std::find(remainingChars.begin(), remainingChars.end(), c));
+      remainingChars.erase(std::find(remainingChars.begin(), \
+        remainingChars.end(), c));
       buildTree(remainingChars, child);
     }
   }
-  void _getPermutations(node* currentNode, std::vector<char>& currentPermutation, std::vector<std::vector<char>>& permutations) const {
+  void _getPermutations(node* currentNode, std::vector<char> currentPermutation, \
+    std::vector<std::vector<char>> permutations) {
     if (currentNode == nullptr) {
       return;
     }
