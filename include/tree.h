@@ -41,7 +41,7 @@ class Tree {
     std::vector<std::vector<char>>* permutations) const {
     currentPermutation.push_back(current->a);
     if (current->children.empty()) {
-      permutations.push_back(currentPermutation);
+      permutations->push_back(currentPermutation);
     } else {
       for (node* child : current->children) {
         generatePermutations(child, currentPermutation, permutations);
