@@ -31,11 +31,13 @@ class Tree {
       node* child = new node(c);
       parent->children.push_back(child);
       std::vector<char> remainingChars(characters);
-      remainingChars.erase(std::find(remainingChars.begin(), remainingChars.end(), c));
+      remainingChars.erase(std::find(remainingChars.begin(), \
+        remainingChars.end(), c));
       buildTree(remainingChars, child);
     }
   }
-  void generatePermutations(node* current, std::vector<char>& currentPermutation, \
+  void generatePermutations(node* current, \
+    std::vector<char>& currentPermutation, \
     std::vector<std::vector<char>>& permutations) const {
     currentPermutation.push_back(current->a);
     if (current->children.empty()) {
