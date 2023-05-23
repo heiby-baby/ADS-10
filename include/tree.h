@@ -20,7 +20,7 @@ class Tree {
   std::vector<std::vector<char>> getPermutations() const {
     std::vector<std::vector<char>> permutations;
     std::vector<char> current;
-    generatePermutations(root, current, permutations);
+    generatePermutations(root, current, &permutations);
     return permutations;
   }
 
@@ -38,7 +38,7 @@ class Tree {
   }
   void generatePermutations(node* current, \
     std::vector<char>& currentPermutation, \
-    std::vector<std::vector<char>>& permutations) const {
+    std::vector<std::vector<char>>* permutations) const {
     currentPermutation.push_back(current->a);
     if (current->children.empty()) {
       permutations.push_back(currentPermutation);
