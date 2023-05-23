@@ -3,14 +3,12 @@
 #define INCLUDE_TREE_H_
 #include <iostream>
 #include <vector>
-#include <iostream>
-#include <vector>
 #include <algorithm>
 
 struct node {
   char a;
   std::vector<node*> children;
-  explicit node(char c) : a(c) {};
+  explicit node(char c) : a(c) {}
 };
 
 class Tree {
@@ -37,7 +35,8 @@ class Tree {
       buildTree(remainingChars, child);
     }
   }
-  void generatePermutations(node* current, std::vector<char>& currentPermutation, std::vector<std::vector<char>>& permutations) const {
+  void generatePermutations(node* current, std::vector<char>& currentPermutation, \
+    std::vector<std::vector<char>>& permutations) const {
     currentPermutation.push_back(current->a);
     if (current->children.empty()) {
       permutations.push_back(currentPermutation);
